@@ -1,0 +1,1 @@
+import{s as t}from"./router.BaxLfCzj.js";t?document.addEventListener("astro:page-load",a):a();window.dataLayer=window.dataLayer||[];function a(){const e=window.location.pathname;window.dataLayer.push({event:"page_view",pagePath:e})}

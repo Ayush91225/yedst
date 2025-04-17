@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filmstrip Animation Left to Right</title>
+  <style>
+    :root {
+      background-color: rgb(12, 12, 12);
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      height: 100vh;
+      --frame-size: 90px; 
+      --frame-count: 19;  
+      --frame-aspect: 90 / 1; 
+    }
+
+    .logo-container {
+      width: var(--frame-size);
+      height: var(--frame-size);
+      overflow: hidden;
+    }
+
+    .filmstrip {
+      --sprite-width: calc(var(--frame-size) * var(--frame-count));
+      width: var(--sprite-width);
+      height: var(--frame-size);
+      animation: logoFlipbook 2s steps(var(--frame-count));
+      animation-fill-mode: forwards; 
+    }
+
+    @keyframes logoFlipbook {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-1 * (var(--sprite-width) - var(--frame-size))));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <img
+      class="filmstrip"
+      src="sprite.png"
+      alt="Filmstrip Animation"
+    />
+  </div>
+</body>
+</html>
